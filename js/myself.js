@@ -23,6 +23,7 @@ let pages = document.querySelectorAll(".page");
 let members = document.querySelectorAll(".members");
 let popup = document.querySelector("#mePop");
 let popupContent = document.querySelector("#popup-content");
+let closeButt = document.querySelector(".close");
 let media = document.querySelector("#music");
 let mediaButton = document.querySelector("#play");
 
@@ -62,11 +63,12 @@ let allLexia =
   "tom":"i made you a web page because i don't call you enough.<br><br><br><button class='lexButt' id='tomButton'>i like web pages</button>",
   "porn":"<p id='porn1'>Pornography (often abbreviated porn) is the portrayal of sexual subject matter for the exclusive purpose of sexual arousal. Pornography may be presented in a variety of media, including books, magazines, postcards, photographs, sculpture, drawing, painting, animation, sound recording, phone calls, writing, film, video, and video games. The term applies to the depiction of the act rather than the act itself, and so does not include live exhibitions like sex shows and striptease. The primary subjects of present-day pornographic depictions are pornographic models, who pose for still photographs, and pornographic actors or porn stars, who perform in pornographic films. If dramatic skills are not involved, a performer in a porn film may also be called a model.</p><br><button class='lexButt pornButtons' id='showPorn1'>show more</button><br><p id='porn2'>Various groups within society have considered depictions of a sexual nature immoral, addictive, and noxious, labeling them pornographic, and attempting to have them suppressed under obscenity and other laws, with varying degrees of success. Such works have also often been subject to censorship and other legal restraints to publication, display, or possession, leading in many cases to their loss. Such grounds, and even the definition of pornography, have differed in various historical, cultural, and national contexts.</p><br><button class='lexButt pornButtons' id='showPorn2'>show more</button><br><p id='porn3'>Irrespective of the legal or social view of pornography, it has been used in a number of contexts. It is used, for example, at fertility clinics to stimulate sperm donors. Some couples use pornography at times for variety and to create a sexual interest or as part of foreplay. There is also some evidence that pornography can be used to treat voyeurism.</p><br><button class='lexButt pornButtons' id='showPorn3'>show more</button>",
   "lsd":"<p>It was my idea, the second time anyways. The paranoia was immense, so was the ADHD. We flew. I communicated in tongue clicks and adjectives and Drake imitations. The Seer by Swans terrified me when I was 14, I blasted it into my neighbors' bathroom. I smoked a pack a day. Eating tobacco, coughing out pneumonia and sea salt. We recorded an album in 12 years. Moving vibraphones and capos. Sometimes I ate Doritos or pizza. One time, I watched a Stanley Kubrick movie and cried at the credits, that will never happen again.</p><button class='lexButt' id='lsdMusic'>listen to me</button>",
+  "weed":"<p>its a comedown day</p><embed src='media/other/weed.pdf'width='800px' height='540px' style='margin-left:50px'/>",
   "swings":"<p>We used to have tire swing rotation nicknames.</p><ol><li><p>The donut - One person, butt in the middle. The largest man (never girl, ew) pushes the tire forward, as far as possible. Knockback; on impact, quick circular motion. Fingers on, freefall. Around and around the bends again. I didn't need a cigarette to feel free, high, winded. Keep spinning, let the clouds roam. Don't kick the spinner, I did it once, he left the park early crying.</p></li><li><p>The washingmachine - Spin the chain, let it tangle, sprawled inside. Once at maximum mess,</p><ul><li><p>The donut - One person, butt in the middle. The largest man (never girl, ew) pushes the tire forward, as far as possible. Knockback; on impact, quick circular motion. Fingers on, freefall. Around and around weiss tear again. I didn't need a weed to feel free, high, gross. Keep spinning, let the kids roam. Don't kick the spinner, I did it once, he left the park early smiling.</p></li></ul></li><li><p>The swirly - Three or four, max weight. Pile on, legs outside backs sweaty against each shoulderblade. Once weighted,</p><ul><li><p>The washingmachine - Spin the chain, let it collide, fucked outside. Once at maximum peace,</p><ol><li><p>The donut - The largest girl (never guy, never) pushes the tire forward, as far as possible. Knockback; on impact, quick square motion. Nails on, freefall. Around and around deja vu again. I didn't need porn to feel good, low, great. Keep grinning, let the drugs roam. Don't kick the spinner, I did it once, he never left the park again.</p></li></ol></li></ul></li></ol><br><button class='lexButt emailSend' id='swingsButton'>can i try?</button>",
-  "destroyer":"<iframe width='100%' height='100%' src='https://www.youtube.com/embed/5ctWlxPGTJ0?autoplay=1'></iframe>",
-  "kanye":"<iframe width='100%' height='100%' src='https://www.youtube.com/embed/j-6bqG6S3xA?autoplay=1'></iframe>",
-  "frank":"<iframe width='100%' height='100%' src='https://www.youtube.com/embed/vI8cDhfSiNE?autoplay=1'></iframe>",
-  "radiohead":"<iframe width='100%' height='100%' src='https://www.youtube.com/embed/Xq_a8f24UJI?autoplay=1'></iframe>"
+  "destroyer":"<iframe width='100%' height='90%' src='https://www.youtube.com/embed/5ctWlxPGTJ0?autoplay=1'></iframe>",
+  "kanye":"<iframe width='100%' height='90%' src='https://www.youtube.com/embed/j-6bqG6S3xA?autoplay=1'></iframe>",
+  "frank":"<iframe width='100%' height='90%' src='https://www.youtube.com/embed/vI8cDhfSiNE?autoplay=1'></iframe>",
+  "radiohead":"<iframe width='100%' height='90%' src='https://www.youtube.com/embed/Xq_a8f24UJI?autoplay=1'></iframe>"
 }
 
 let emailSenders =
@@ -120,6 +122,7 @@ for(var x = 0; x < members.length; x++)
 }
 
 popup.addEventListener("click", showPop);
+closeButt.addEventListener("click", showPop);
 
 mediaButton.isPlaying = true;
 mediaButton.addEventListener("click", soundToggle);
@@ -134,8 +137,11 @@ function showPop()
 {
   if(!isPopped)
   {
-    popup.style.display = "block";
-    isPopped = true;
+    if(event.target != closeButt || event.target == popup)
+    {
+      popup.style.display = "block";
+      isPopped = true;
+    }
 
     if(this.className == "members")
     {
@@ -152,10 +158,12 @@ function showPop()
   }
   else
   {
-    if(event.target == popup)
+    if(event.target == popup || event.target == closeButt)
     {
       popup.style.display = "none";
       isPopped = false;
+      popupContent.innerHTML = "";
+      return;
     }
   }
 }
@@ -278,6 +286,11 @@ function setButtons(id)
     drugsCount++;
   }
 
+  if(id == "weed")
+  {
+    drugsCount++;
+  }
+
   //Memories There
   if(id == "swings")
   {
@@ -353,15 +366,15 @@ function showPorn()
 
 function tooManyDrugs()
 {
-  if(drugsCount > 7)
+  if(drugsCount > 6)
   {
     document.querySelector("#stage").style.backgroundImage = "url(media/tree/static.png)";
   }
-  if(drugsCount > 5)
+  if(drugsCount > 4)
   {
     document.querySelector("#taekwondo").style.backgroundImage = "url(media/tree/static.png)";
   }
-  if(drugsCount > 3)
+  if(drugsCount > 2)
   {
     allLexia["swings"] = "missing from this";
     document.querySelector("#swings").style.backgroundImage = "url(media/tree/static.png)";
