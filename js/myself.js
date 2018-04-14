@@ -248,7 +248,7 @@ function setButtons(id)
     let tomButton = document.querySelector("#tomButton");
     tomButton.onclick = (e) =>
     {
-      window.open("toms page/index.html");
+      window.open("toms page");
     }
 
     sendText(phoneNumber, phoneCarrier, textSenders[id], textMessages[id]);
