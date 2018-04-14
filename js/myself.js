@@ -71,8 +71,8 @@ let allLexia =
 
 let emailSenders =
 {
-  "meButton":"you@me.com",
-  "swingsButton":"babysitting@kids.com",
+  "me":"you@me.com",
+  "swings":"babysitting@kids.com",
   "kanye":"kanyewest@pablo.com",
   "destroyer":"merge@mergerecords.com",
   "showPorn3":"support@pornhub.com"
@@ -80,8 +80,8 @@ let emailSenders =
 
 let emailSubjects =
 {
-  "meButton":"a poem to get started",
-  "swingsButton":"that picture was my brother",
+  "me":"a poem to get started",
+  "swings":"that picture was my brother",
   "kanye":"sup man",
   "destroyer":"they led us on they said it would be yours tear down the borders, stop patrolling the shores, let us in",
   "showPorn3":"your pornhub premium membership has expired!!!??!!"
@@ -89,9 +89,9 @@ let emailSubjects =
 
 let emailMessages =
 {
-  "meButton":"I can hear you warmth A campfire a coffee thermos that bourbon on your grandpa’s beard; I can hear you Your voice (i’m not cold anymore) That’s irony, she said yesterday I hope I didn’t scare you away I made you those corn muffins you like Ex-girlfriends experience new ecstasies without me and i think that they’re afraid of me they have to be; they just have to be So it goes without saying: So I know that you’re saying: So what? Did I stutter or did I leave? Fly a paper kite into the fisherman’s eye High and high the clouds beg so you rise And know that you are good enough, (at least for a little while)",
+  "me":"I can hear you warmth A campfire a coffee thermos that bourbon on your grandpa’s beard; I can hear you Your voice (i’m not cold anymore) That’s irony, she said yesterday I hope I didn’t scare you away I made you those corn muffins you like Ex-girlfriends experience new ecstasies without me and i think that they’re afraid of me they have to be; they just have to be So it goes without saying: So I know that you’re saying: So what? Did I stutter or did I leave? Fly a paper kite into the fisherman’s eye High and high the clouds beg so you rise And know that you are good enough, (at least for a little while)",
 
-  "swingsButton":"i don't think i have any pictures from those days. if i did, i'd send them your way. it's weird how simple swings like that can have such an impact. maybe if i didn't get a washingmachine, i wouldn't smoke a pack a day. maybe if i didn't kick that guy, my ex would still be with me. i wouldn't be a pacifist. there was one time i got in a fight. i remember i beat up four middle schoolers, as a fifth grader that was huge. no one found out. maybe i'll tell you more later. they took down that tire swing, i checked on google maps. how can we get it back?",
+  "swings":"i don't think i have any pictures from those days. if i did, i'd send them your way. it's weird how simple swings like that can have such an impact. maybe if i didn't get a washingmachine, i wouldn't smoke a pack a day. maybe if i didn't kick that guy, my ex would still be with me. i wouldn't be a pacifist. there was one time i got in a fight. i remember i beat up four middle schoolers, as a fifth grader that was huge. no one found out. maybe i'll tell you more later. they took down that tire swing, i checked on google maps. how can we get it back?",
 
   "kanye":"bro. bro! listen to the kids. first of all, thank you, taylor, for being so gracious and giving me this award this evening.	and i often think back to the first day i met you also. you know i think about when i'm in the grocery store with my daughter and i have a really great conversation about fresh juice... and at the end they say, 'oh, you're not that bad after all!' and like i think about it sometimes... it crosses my mind a little bit like when i go to a baseball game and 60,000 people boo me. crosses my mind a little bit.	and i think if i had to do it all over again what would i have done? would i have worn a leather shirt? would i have drank half a bottle of hennessy and gave the rest of it to the audience? ya'll know ya'll drank that bottle too! if i had a daughter at that time would i have went on stage and grabbed the mic from someone else's? you know, this arena tomorrow it's gonna be a completely different setup. some concert, something like that. the stage will be gone. after that night, the stage was gone, but the effect that it had on people remained. the... the problem was the contradiction. the contradiction is i do fight for artists, but in that fight i somehow was disrespectful to artists. i didn't know how to say the right thing, the perfect thing. i just ... i sat at the grammys and saw justin timberlake and cee-lo lose. gnarls barkley and the futurelove ... sexyback album ... and justin, i ain't trying to put you on blast, but i saw that man in tears, bro. you know, and i was thinking, like, 'he deserved to win album of the year!and this small box that we are as the entertainers of the evening ... how could you explain that? sometimes i feel like all this s--t they run about beef and all that? sometimes i feel like i died for the artist's opinion. for artists to be able to have an opinion after they were successful. i'm not no politician, bro!look at that. you know how many times mtv ran that footage again? 'cause it got them more ratings? you know how many times they announced taylor was going to give me the award 'cause it got them more ratings? listen to the kids, bro! i still don't understand awards shows. i don't understand how they get five people who worked their entire life ... sold records, sold concert tickets to come stand on the carpet and for the first time in they life be judged on the chopping block and have the opportunity to be considered a loser! i don't understand it, bruh!i don't understand when the biggest album, or the biggest video ... i've been conflicted, bro. i just wanted people to like me more. but f--k that, bro! 2015! i will die for the art! for what i believe in. and the art ain't always gonna be polite! ya'll might be thinking right now, 'did he smoke something before he came out here?' the answer is yes, i rolled up a little something. i knocked the edge off!i don't know what's gonna happen tonight, i don't know what's gonna happen tomorrow, bro. but all i can say to my artists, to my fellow artists: just worry how you feel at the time, man. just worry about how you feel and don't never ... you know what i'm saying? i'm confident. i believe in myself. we the millennials, bro. this is a new mentality. we're not gonna control our kids with brands. we not gonna teach low self-esteem and hate to our kids. we gonna teach our kids that they can be something. we gonna teach our kids that they can stand up for theyself! we gonna teach our kids to believe in themselves! if my grandfather was here right now he would not let me back down! i don't know i'm fittin' to lose after this. it don't matter though, cuz it ain't about me. it's about ideas, bro. new ideas. people with ideas. people who believe in truth. and yes, as you probably could have guessed by this moment, i have decided in 2020 to run for president.",
 
@@ -281,16 +281,20 @@ function setButtons(id)
   //Memories There
   if(id == "swings")
   {
-    document.querySelector("#swingsButton").addEventListener("click", sendHelper);
-    document.querySelector("#swingsButton").onclick = (e) =>
+    document.querySelector("#swingsButton").onclick = function(e)
     {
+      sendEmail(email, emailSenders[id], emailSubjects[id], emailMessages[id]);
       window.open("https://www.google.com/maps/@42.7710351,-71.4721556,3a,75y,157.91h,74.36t/data=!3m6!1e1!3m4!1s3wp5-i9b5IE_ceOFwTVivA!2e0!7i13312!8i6656",'_blank');
     }
   }
 
   if(id == "me")
   {
-    document.querySelector("#meButton").addEventListener("click", sendHelper);
+    document.querySelector("#meButton").onclick = function(e)
+    {
+      sendEmail(email, emailSenders[id], emailSubjects[id], emailMessages[id]);
+      this.style.display = "none";
+    }
   }
 
   if(id == "kanye")
@@ -402,20 +406,6 @@ function findYourself()
     document.querySelector("#me").style.backgroundImage = "url(media/tree/me/baby.gif)";
     document.querySelector("#me").style.border = "5px solid blue";
   }
-}
-
-function sendHelper()
-{
-  if(this.className == "lexButt emailSend")
-  {
-    sendEmail(email, emailSenders[this.id], emailSubjects[this.id], emailMessages[this.id]);
-  }
-  else
-  {
-    sendText(phoneNumber, phoneCarrier, textSenders[this.id], textMessages[this.id]);
-  }
-
-  this.style.display = "none";
 }
 
 function sendEmail(email, sender, subject, message)
