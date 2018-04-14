@@ -44,7 +44,7 @@ function storeValues() {
   localStorage.setItem(numKey, userNum);
   localStorage.setItem(carrierKey, userCarrier);
 
-  location.href = "myself.html";
+  location.href = "myself";
 }
 
 function inputCheck(emailAdd, phoneNumber) {
