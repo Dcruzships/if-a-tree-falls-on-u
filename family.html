@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>sometimes in a family, the mother has to provide</title>
+  <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather" rel="stylesheet">
+  <link href="css/family.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="trees.html">tree</a></li>
+      <li id="active"><a href="#" id=current>family</a></li>
+    </ul>
+  </div>
+
+  <div id="landing">
+    <h1><u>about</u></h1>
+
+    <p><u>if a tree falls on u</u> is a story about a family told through prose, poetry, emails, texts, links, videos, imagery, sound, and other forms of media.</p>
+    <p>Disclaimer: Your email and phone number will be saved on your personal machine, only accessable by these pages. The data will also be deleted once you close the application. You will not be spammed, the only communication will be when you directly interact with the application.</p>
+
+    <p id="error"><p>
+
+    <button class="button">clear data</button>
+  </div>
+
+  <footer>Brandon Dcruz, Copyright 2018</footer>
+
+  <script>
+
+    let clearBut = document.querySelector(".button");
+    let errorCode = document.querySelector("#error");
+    let theNum = localStorage.getItem("bvd5889-number");
+    let theEmail = localStorage.getItem("bvd5889-email");
+    let theCarrier = localStorage.getItem("bvd5889-carrier");
+
+    let clearData = (e) =>
+    {
+      if(theNum)
+      {
+        localStorage.removeItem("bvd5889-carrier");
+        localStorage.removeItem("bvd5889-email");
+        localStorage.removeItem("bvd5889-number");
+
+        errorCode.innerHTML = "Successfully deleted user data.";
+      }
+      else
+      {
+        errorCode.innerHTML = "No data to delete.";
+      }
+    };
+
+    clearBut.onclick = clearData;
+
+  </script>
+</body>
+
+</html>
