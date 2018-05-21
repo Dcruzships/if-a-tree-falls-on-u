@@ -97,7 +97,6 @@ let emailSenders =
   "kanye":"kanyewest@pablo.com",
   "destroyer":"merge@mergerecords.com",
   "showPorn3":"support@pornhub.com",
-  "sammy":"support@instagram.com",
   "kuhu":"stranger@withmysecrets.gov"
 }
 
