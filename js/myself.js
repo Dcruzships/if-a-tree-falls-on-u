@@ -69,7 +69,7 @@ let allLexia =
 
   "tom":"i made you a web page because i don't call you enough.<br><br><br><button class='lexButt' id='tomButton'>i like web pages</button>",
 
-  "sammy":"<p>Follow Sam on Instagram! <a href='https://instagram.com/sammyvlol'><img src='emails/sam/images/instagram@2x.png'></a></p><p>Add Sam on Snapchat! <a href='https://www.snapchat.com/add/sammyviamonte'><img src='emails/sam/images/snapchat@2x.png'></a></p><p>Watch Sam on YouTube! <a href='https://www.youtube.com/channel/UCopwzVPHG0nGX6lt17HKabA'><img src='emails/sam/images/youtube@2x.png'></a></p><br><p>Subscribe to Sam's Mailing List!<br><br><button class='lexButt emailSend' id='sammyButt'>Click Me!</button></p>",
+  "sammy":"<p>Follow Sam on Instagram!   <a href='https://instagram.com/sammyvlol' target='_blank'><img src='emails/sam/images/instagram@2x.png'></a></p><p>Add Sam on Snapchat!   <a href='https://www.snapchat.com/add/sammyviamonte'  target='_blank'><img src='emails/sam/images/snapchat@2x.png'></a></p><p>Watch Sam on YouTube!   <a href='https://www.youtube.com/channel/UCopwzVPHG0nGX6lt17HKabA'  target='_blank'><img src='emails/sam/images/youtube@2x.png'></a></p><p>follow sam on twitter   <a href='https://twitter.com/LoveStoriesEtc'  target='_blank'><img src='emails/sam/images/twitter.png'></a></p><br><p>Subscribe to Sam's Mailing List!   <button class='lexButt emailSend' id='sammyButt'>Click Me!</button></p>",
 
   "kuhu":"<p id='kuhuPoem'>so won't you forgive me<br><br>won't you let us be<br><br>we could<br><br>fly kites catch butterflies<br><br>hop on playgrounds and watch the clouds oh<br><br>it just gets hard<br><br>and i freak out<br><br>because if i lose you<br><br>i know ill pout<br><br></p><button class='lexButt emailSend' id='kuhuButt'>lol maybe</button>",
 
@@ -328,7 +328,7 @@ function setButtons(id)
 
   if(id == "sammy")
   {
-    //Sam's butt. She bragged about that a lot. I did too. I was really attracted to it, still am. I masturbate to it sometimes, and I feel really ashamed afterwards. She doesn't want anything to do with me anymore. She'll be a few variables in here though, I don't know if she'll like the way she's portrayed in this anyways. Advertising. Social media. Modeling. But that's what she is that's what she represents. Making art is difficult, but if I don't talk about this life, I've got nothing worth talking about.
+    //lol sam's butt. She bragged about that a lot. I did too. I was really attracted to it, still am. I masturbate to it sometimes, and I feel really ashamed afterwards. She doesn't want anything to do with me anymore. She'll be a few variables in here though, I don't know if she'll like the way she's portrayed in this anyways. Advertising. Social media. Modeling. But that's what she is that's what she represents. Making art is difficult, but if I don't talk about this life, I've got nothing worth talking about.
 
     let samButt = document.querySelector("#sammyButt");
     sammyButt.onclick = (e) =>
