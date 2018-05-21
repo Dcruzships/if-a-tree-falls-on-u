@@ -153,13 +153,13 @@ body {
   background-image: url("../media/tree/memories/swings.png");
 }
 
-#stage {
+#church {
   width: 300px;
   height: 300px;
   margin-top: 30vh;
   margin-left: 35vw;
   display: inherit;
-  background-image: url("../media/tree/memories/stage.png");
+  background-image: url("../media/tree/memories/church.gif");
 }
 
 #taekwondo {
