@@ -69,7 +69,7 @@ let allLexia =
 
   "tom":"i made you a web page because i don't call you enough.<br><br><br><button class='lexButt' id='tomButton'>i like web pages</button>",
 
-  "sammy":"<p>Follow Sam on Instagram!   <a href='https://instagram.com/sammyvlol' target='_blank'><img src='emails/sam/images/instagram@2x.png'></a></p><p>Add Sam on Snapchat!   <a href='https://www.snapchat.com/add/sammyviamonte'  target='_blank'><img src='emails/sam/images/snapchat@2x.png'></a></p><p>Watch Sam on YouTube!   <a href='https://www.youtube.com/channel/UCopwzVPHG0nGX6lt17HKabA'  target='_blank'><img src='emails/sam/images/youtube@2x.png'></a></p><p>follow sam on twitter   <a href='https://twitter.com/LoveStoriesEtc'  target='_blank'><img src='emails/sam/images/twitter.png'></a></p><br><p>Subscribe to Sam's Mailing List!   <button class='lexButt emailSend' id='sammyButt'>Click Me!</button></p>",
+  "sammy":"<p>Follow Sam on Instagram!   <a href='https://instagram.com/sammyvlol' target='_blank'><img src='emails/sam/images/instagram.png'></a></p><p>Add Sam on Snapchat!   <a href='https://www.snapchat.com/add/sammyviamonte'  target='_blank'><img src='emails/sam/images/snapchat.png'></a></p><p>Watch Sam on YouTube!   <a href='https://www.youtube.com/channel/UCopwzVPHG0nGX6lt17HKabA'  target='_blank'><img src='emails/sam/images/youtube.png'></a></p><p>follow sam on twitter   <a href='https://twitter.com/LoveStoriesEtc'  target='_blank'><img src='emails/sam/images/twitter.png'></a></p><br><p>Subscribe to Sam's Mailing List!   <button class='lexButt emailSend' id='sammyButt'>Click Me!</button></p>",
 
   "kuhu":"<p id='kuhuPoem'>so won't you forgive me<br><br>won't you let us be<br><br>we could<br><br>fly kites catch butterflies<br><br>hop on playgrounds and watch the clouds oh<br><br>it just gets hard<br><br>and i freak out<br><br>because if i lose you<br><br>i know ill pout<br><br></p><button class='lexButt emailSend' id='kuhuButt'>lol maybe</button>",
 
@@ -97,6 +97,7 @@ let emailSenders =
   "kanye":"kanyewest@pablo.com",
   "destroyer":"merge@mergerecords.com",
   "showPorn3":"support@pornhub.com",
+  "sammy":"support@instagram.com",
   "kuhu":"stranger@withmysecrets.gov"
 }
 
@@ -335,6 +336,9 @@ function setButtons(id)
     {
       sendEmail(email, emailSenders[id], emailSubjects[id], emailMessages[id]);
       window.open("media/videos/sam.mp4", '_blank');
+
+      popupContent.style.backgroundColor = "rgb(49, 163, 195)";
+      popupContent.innerHTML = "Thank you so much! 💖💖💖"
     }
   }
 
