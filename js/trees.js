@@ -14,6 +14,14 @@ email.addEventListener("click", resetCode);
 
 getValues();
 
+document.addEventListener("keydown", function (e)
+{
+  if(e.which == 13)
+  {
+    storeValues();
+  }
+});
+
 function getValues()
 {
   let theNum = localStorage.getItem(numKey);
