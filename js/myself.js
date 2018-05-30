@@ -29,6 +29,7 @@ let popupContent = document.querySelector("#popup-content");
 let closeButt = document.querySelector(".close");
 let media = document.querySelector("#music");
 let mediaButton = document.querySelector("#play");
+mediaButton.isPlaying = false;
 
 //PHP Info, also delete personal info once the window is closed
 let phoneNumber = localStorage.getItem("bvd5889-number");
@@ -95,13 +96,13 @@ let allLexia =
 
 let emailSenders =
 {
-  "me":"you@me.com",
-  "swings":"babysitting@kids.com",
-  "kanye":"kanyewest@pablo.com",
-  "destroyer":"merge@mergerecords.com",
-  "showPorn3":"support@pornhub.com",
-  "sammy":"support@instagram.com",
-  "kuhu":"stranger@withmysecrets.gov"
+  "me":"you@me.com <you@me.com>",
+  "swings":"babysitting@kids.com <babysitting@kids.com>",
+  "kanye":"kanyewest@pablo.com <kanyewest@pablo.com>",
+  "destroyer":"merge@mergerecords.com <merge@mergerecords.com>",
+  "showPorn3":"support@pornhub.com <support@pornhub.com>",
+  "sammy":"doyou@remember.me <doyou@remember.me>",
+  "kuhu":"stranger@withmysecrets.gov <stranger@withmysecrets.gov>"
 }
 
 let emailSubjects =
@@ -129,14 +130,14 @@ let emailMessages =
 
   "sammy":"sammy",
 
-  "kuhu":"Hey Cocoa Puffs,\r\n\r\nMrs. M told me to write an email, so I\'m giving it a shot. Honestly, I\'m not ok right now, but Mrs. M also told me to breathe, and I think it\’s working. I hope you\'re ok, but I know you\’re not. Over the past few weeks, I haven\’t been feeling good. You\’ve been avoiding me and trying to let me go. But even though I finally said those words, I didn\’t mean them. It was my only way of getting your attention away from R. You told me that I do this to you all the time, but I don\’t feel like I have. I\’ve never responded to or delivered messages from another girl whom I\’ve never met. I\’ve never received bikini pics from any girl, even accidentally. I\’ve never spent more than 5 hours in total with any other girl. I\’ve never posted on social media showcasing any other girl. I\’ve never ditched you for any other girl, and I\’ve always called and told you about whatever event before. I\’ve never hung out with a girl at night. I\’ve never gone to a party with a girl. I\’ve never made you feel inferior or in competition with anyone, and I\’ve told you countless times that I value you over anyone. I ensured you felt wanted, and I always put you first. But lately I\’ve been feeling horrible. I understand that I\’m not there at UMass with you. But you’re not at RIT with me either, and I make sure you don’t feel bad about that.\r\n\r\nWhen you told me I couldn\’t come on Friday, I panicked. I flashed forward and realized that I can never visit you on campus, or go to parties with you or anything. You\’ve said so many hurtful things to me, like how you only wear your ring because it looks nice. Even on my birthday you didn’t want to talk. Today you told me I won another of those little bets you always do by picking up, but by telling me not to come Friday, you lost one of mine. Today I told you outright, straightforwardly that Rish makes me really uncomfortable, and the amount of time you spend with him makes me feel insecure and unwanted. But you got offended, and acted as if my feelings are irrelevant. Then you avoided me, when all I wanted to do was talk about literally anything. I can\’t control my feelings, and the entire root cause is that I just don\’t want to lose you.\r\n\r\nI don\’t know if you’re still reading this. Probably not. I\’m to blame for this too. I was too needy and clingy. Now you\’re not talking to me, and that record streak we have on Snapchat will have to fade I guess. We both knew this long distance relationship was going to be difficult; I guess we just miscalculated how much. I tried to fight to keep you, but it wasn\’t my fight.\r\n\r\nI still love you. I still remember everything we\’ve been through and everything we\’ve done. I still remember you bursting into tears after finding dory, and using Sidd and TDevs to prompose to me in front of dozens, and doing the cupcakes puzzle with you, and watching friends, and holding hands through Boston with you, and going to Barnes and the mall and Roby Park and the cops and late night phone calls and oth and my sunglasses on you and meeting your little sister and being your everything. I don’t want to lose you, I\’m just afraid I already did weeks ago. This can be the last message you ever see from me if you want. I didn\’t mean to break up with you, but if you prefer, we can stay apart. I want to fix things, and keep trying. But if you don\’t, just know that I\’m happy. It\’s a choice, remember?\r\n\r\nDon\’t let the bed bugs bite.\r\nBran Flakes"
+  "kuhu":"Hey Cocoa Puffs,\r\n\r\nMrs. M told me to write an email, so I\’m giving it a shot. Honestly, I\’m not ok right now, but Mrs. M also told me to breathe, and I think it\’s working. I hope you\'re ok, but I know you\’re not. Over the past few weeks, I haven\’t been feeling good. You\’ve been avoiding me and trying to let me go. But even though I finally said those words, I didn\’t mean them. It was my only way of getting your attention away from R. You told me that I do this to you all the time, but I don\’t feel like I have. I\’ve never responded to or delivered messages from another girl whom I\’ve never met. I\’ve never received bikini pics from any girl, even accidentally. I\’ve never spent more than 5 hours in total with any other girl. I\’ve never posted on social media showcasing any other girl. I\’ve never ditched you for any other girl, and I\’ve always called and told you about whatever event before. I\’ve never hung out with a girl at night. I\’ve never gone to a party with a girl. I’ve never made you feel inferior or in competition with anyone, and I\’ve told you countless times that I value you over anyone. I ensured you felt wanted, and I always put you first. But lately I\’ve been feeling horrible. I understand that I\’m not there at UMass with you. But you’re not at RIT with me either, and I make sure you don’t feel bad about that.\r\n\r\nWhen you told me I couldn\’t come on Friday, I panicked. I flashed forward and realized that I can never visit you on campus, or go to parties with you or anything. You\’ve said so many hurtful things to me, like how you only wear your ring because it looks nice. Even on my birthday you didn’t want to talk. Today you told me I won another of those little bets you always do by picking up, but by telling me not to come Friday, you lost one of mine. Today I told you outright, straightforwardly that Rish makes me really uncomfortable, and the amount of time you spend with him makes me feel insecure and unwanted. But you got offended, and acted as if my feelings are irrelevant. Then you avoided me, when all I wanted to do was talk about literally anything. I can\’t control my feelings, and the entire root cause is that I just don\’t want to lose you.\r\n\r\nI don\’t know if you’re still reading this. Probably not. I\’m to blame for this too. I was too needy and clingy. Now you\’re not talking to me, and that record streak we have on Snapchat will have to fade I guess. We both knew this long distance relationship was going to be difficult; I guess we just miscalculated how much. I tried to fight to keep you, but it wasn\’t my fight.\r\n\r\nI still love you. I still remember everything we\’ve been through and everything we\’ve done. I still remember you bursting into tears after finding dory, and using Sidd and TDevs to prompose to me in front of dozens, and doing the cupcakes puzzle with you, and watching friends, and holding hands through Boston with you, and going to Barnes and the mall and Roby Park and the cops and late night phone calls and oth and my sunglasses on you and meeting your little sister and being your everything. I don’t want to lose you, I\’m just afraid I already did weeks ago. This can be the last message you ever see from me if you want. I didn\’t mean to break up with you, but if you prefer, we can stay apart. I want to fix things, and keep trying. But if you don\’t, just know that I\’m happy. It\’s a choice, remember?\r\n\r\nDon\’t let the bed bugs bite.\r\nBran Flakes"
 }
 
 let textSenders =
 {
   "showPorn3":"support@pornhub.com",
   "tom":"tom@magdi.net",
-  "kuhu":"istillknow@yournumberby<3.com"
+  "kuhu":"istillknow@yournumber.byheart"
 }
 
 let textMessages =
@@ -170,7 +171,6 @@ for(var x = 0; x < members.length; x++)
 popup.addEventListener("click", showPop);
 closeButt.addEventListener("click", showPop);
 
-mediaButton.isPlaying = true;
 mediaButton.addEventListener("click", soundToggle);
 
 for(let i = 0; i < buttonArray.length; i++)
@@ -323,11 +323,12 @@ function setButtons(id)
     let tomButton = document.querySelector("#tomButton");
     tomButton.onclick = (e) =>
     {
+      media.src = "media/audio/knows.mp3";
+      soundToggle();
       window.open("toms page");
     }
 
     sendText(phoneNumber, phoneCarrier, textSenders[id], textMessages[id]);
-
   }
 
   if(id == "sammy")
@@ -374,9 +375,7 @@ function setButtons(id)
     document.querySelector("#lsdMusic").onclick = (e) =>
     {
       media.src = "media/audio/acid1.mp3";
-      media.play();
-      mediaButton.style.display = "inherit";
-      mediaButton.src = "media/nav/pause.png";
+      soundToggle();
     }
     drugsCount++;
   }
@@ -418,6 +417,8 @@ function setButtons(id)
 
 function soundToggle()
 {
+  mediaButton.style.display = "block";
+
   if(mediaButton.isPlaying)
   {
     media.pause();
@@ -429,7 +430,7 @@ function soundToggle()
     mediaButton.src = "media/nav/pause.png";
   }
 
-  mediaButton.isPlaying = !this.isPlaying;
+  mediaButton.isPlaying = !mediaButton.isPlaying;
 }
 
 function showPorn()

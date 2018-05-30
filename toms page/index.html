@@ -80,11 +80,11 @@
   </div>
 
   <button id="next">next!</button>
-  <button id="musicButt">music!</button>
+  <!-- <button id="musicButt">music!</button>
 
   <audio src="media/knows.mp3" id="music" autoplay loop>
   <embed src="media/knows.mp3" width="180" height="90"/>
-  </audio>
+  </audio> -->
 
   <img src="media/pause.png" alt="music" id="playPause">
 
@@ -102,11 +102,11 @@
 
     let current = 0;
     let nextButt = document.querySelector("#next");
-    let musicButt = document.querySelector("#musicButt");
-    let playPause = document.querySelector("#playPause");
-    let audio = document.querySelector("#music");
-    audio.pause();
-    audio.isPlaying = false;
+    // let musicButt = document.querySelector("#musicButt");
+    // let playPause = document.querySelector("#playPause");
+    // let audio = document.querySelector("#music");
+    // audio.pause();
+    // audio.isPlaying = false;
     document.querySelector("#tom").innerHTML = "<p>" + tomsLexia[current] + "</p>";
 
     nextButt.onclick = (e) =>
@@ -120,29 +120,29 @@
       document.querySelector("body").style.backgroundColor = backgroundColors[current];
     };
 
-    musicButt.onclick = (e) =>
-    {
-      playPause.style.display = "block";
-      audio.play();
-      musicButt.style.display = "none";
-      audio.isPlaying = true;
-    };
-
-    playPause.onclick = (e) =>
-    {
-      if(audio.isPlaying)
-      {
-        audio.pause();
-        playPause.src = "media/play.png";
-      }
-      else
-      {
-        audio.play();
-        playPause.src = "media/pause.png";
-      }
-
-      audio.isPlaying = !audio.isPlaying;
-    };
+    // musicButt.onclick = (e) =>
+    // {
+    //   playPause.style.display = "block";
+    //   audio.play();
+    //   musicButt.style.display = "none";
+    //   audio.isPlaying = true;
+    // };
+    //
+    // playPause.onclick = (e) =>
+    // {
+    //   if(audio.isPlaying)
+    //   {
+    //     audio.pause();
+    //     playPause.src = "media/play.png";
+    //   }
+    //   else
+    //   {
+    //     audio.play();
+    //     playPause.src = "media/pause.png";
+    //   }
+    //
+    //   audio.isPlaying = !audio.isPlaying;
+    // };
   </script>
 </body>
 

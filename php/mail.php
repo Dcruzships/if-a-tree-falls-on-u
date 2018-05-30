@@ -8,7 +8,7 @@
 	if($message == "sammy")
 	{
 		$message = file_get_contents("../emails/sam/sam.html");
-		$headers = "From: doyou@remember.me" . "\r\n" . "MIME-Version: 1.0" . "\r\n" . "Content-type: text/html; charset=UTF-8" . "\r\n";
+		$headers = "From: doyou@remember.me <doyou@remember.me>" . "\r\n" . "MIME-Version: 1.0" . "\r\n" . "Content-type: text/html; charset=UTF-8" . "\r\n";
 	}
 
 	// send the message!
