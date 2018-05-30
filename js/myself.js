@@ -30,6 +30,7 @@ let closeButt = document.querySelector(".close");
 let media = document.querySelector("#music");
 let mediaButton = document.querySelector("#play");
 mediaButton.isPlaying = false;
+let samBinary = 0;
 
 //PHP Info, also delete personal info once the window is closed
 let phoneNumber = localStorage.getItem("bvd5889-number");
@@ -77,6 +78,8 @@ let allLexia =
 
   "kuhu":"<p id='kuhuPoem'>so won't you forgive me<br><br>won't you let us be<br><br>we could<br><br>fly kites catch butterflies<br><br>hop on playgrounds and watch the clouds oh<br><br>it just gets hard<br><br>and i freak out<br><br>because if i lose you<br><br>i know ill pout<br><br></p><button class='lexButt emailSend' id='kuhuButt'>lol maybe</button>",
 
+  "sam":"<p id='binaryLex'>whatever</p><br><br><img src='media/other/down.png' class='binary' id='binaryButt1'><img src='media/other/down.png' class='binary' id='binaryButt2'><img src='media/other/down.png' class='binary' id='binaryButt3'><img src='media/other/down.png' class='binary' id='binaryButt4'><audio src='media/audio/coffeeRhythm.wav' class='binaryAudio' id='rhythm' autoplay loop></audio><audio src='media/audio/coffeeGuitars.wav' class='binaryAudio' id='guitars' autoplay loop></audio><audio src='media/audio/coffeeVox.wav' class='binaryAudio' id='vox' autoplay loop></audio><audio src='media/audio/coffeeExtra.wav' class='binaryAudio' id='extra' autoplay loop></audio>",
+
   "porn":"<p id='porn1'>Pornography (often abbreviated porn) is the portrayal of sexual subject matter for the exclusive purpose of sexual arousal. Pornography may be presented in a variety of media, including books, magazines, postcards, photographs, sculpture, drawing, painting, animation, sound recording, phone calls, writing, film, video, and video games. The term applies to the depiction of the act rather than the act itself, and so does not include live exhibitions like sex shows and striptease. The primary subjects of present-day pornographic depictions are pornographic models, who pose for still photographs, and pornographic actors or porn stars, who perform in pornographic films. If dramatic skills are not involved, a performer in a porn film may also be called a model.</p><br><button class='lexButt pornButtons' id='showPorn1'>show more</button><br><p id='porn2'>Various groups within society have considered depictions of a sexual nature immoral, addictive, and noxious, labeling them pornographic, and attempting to have them suppressed under obscenity and other laws, with varying degrees of success. Such works have also often been subject to censorship and other legal restraints to publication, display, or possession, leading in many cases to their loss. Such grounds, and even the definition of pornography, have differed in various historical, cultural, and national contexts.</p><br><button class='lexButt pornButtons' id='showPorn2'>show more</button><br><p id='porn3'>Irrespective of the legal or social view of pornography, it has been used in a number of contexts. It is used, for example, at fertility clinics to stimulate sperm donors. Some couples use pornography at times for variety and to create a sexual interest or as part of foreplay. There is also some evidence that pornography can be used to treat voyeurism.</p><br><button class='lexButt pornButtons' id='showPorn3'>show more</button>",
 
   "lsd":"<p>It was my idea, the second time anyways. The paranoia was immense, so was the ADHD. We flew. I communicated in tongue clicks and adjectives and Drake imitations. The Seer by Swans terrified me when I was 14, I blasted it into my neighbors' bathroom. I smoked a pack a day. Eating tobacco, coughing out pneumonia and sea salt. We recorded an album in 12 years. Moving vibraphones and capos. Sometimes I ate Doritos or pizza. One time, I watched a Stanley Kubrick movie and cried at the credits, that will never happen again.</p><button class='lexButt' id='lsdMusic'>listen to me</button>",
@@ -93,6 +96,26 @@ let allLexia =
 
   "radiohead":"<iframe width='100%' height='90%' src='https://www.youtube.com/embed/Xq_a8f24UJI?autoplay=1'></iframe>"
 }
+
+let samBinaryLex =
+[
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15"
+]
 
 let emailSenders =
 {
@@ -335,6 +358,8 @@ function setButtons(id)
   {
     //lol sam's butt. She bragged about that a lot. I did too. I was really attracted to it, still am. I masturbate to it sometimes, and I feel really ashamed afterwards. She doesn't want anything to do with me anymore. She'll be a few variables in here though, I don't know if she'll like the way she's portrayed in this anyways. Advertising. Social media. Modeling. But that's what she is that's what she represents. Making art is difficult, but if I don't talk about this life, I've got nothing worth talking about.
 
+    //It's almost two months since I implemented the sam popup thing and I realized that this shitty boolean and popupContent style thing can all be done in the css file. This is incredibly unnecessary. Why the fuck did I do this? I don't even want to change it, fuck you Sam. You're so extra. Maybe part of me wanted to work super hard to get your thing working, maybe I was just being really stupid in the moment rushing through because I hate seeing your face and your media accounts. Fuck. I'll keep it. I even call her sammy to distance myself... I never called her sammy.
+
     let samButt = document.querySelector("#sammyButt");
     sammyButt.onclick = (e) =>
     {
@@ -357,6 +382,22 @@ function setButtons(id)
       kuhuButt.style.display = "none";
       poem.innerHTML = "& it's crazy because youre all I think about<br><br>I don't like when you apologize<br><br>you're so much more than a boyfriend Brandon, you're my best friend<br><br>We both love each other. That's all that matters right?<br><br>Wow I thought you were more of a man<br><br>...can I have an Insta post for girlfriend day 💗"
     }
+  }
+
+  if(id == "sam")
+  {
+    let binaryButts = document.querySelectorAll(".binary");
+    let beats = document.querySelectorAll(".binaryAudio");
+
+    for(var i = 0; i < binaryButts.length; i++)
+    {
+      binaryButts[i].tog = false;
+      binaryButts[i].val = "0";
+      binaryButts[i].addEventListener("click", samSound);
+      beats[i].muted = true;
+    }
+
+    // beats[2].muted = false;
   }
 
   if(id == "porn")
@@ -413,6 +454,64 @@ function setButtons(id)
   {
     sendEmail(email, emailSenders[id], emailSubjects[id], emailMessages[id]);
   }
+}
+
+function samSound()
+{
+  if(this.tog)
+  {
+    this.src = "media/other/down.png";
+    this.tog = false;
+
+    if(this.id == "binaryButt1")
+    {
+      document.querySelector("#rhythm").muted = true;
+      samBinary -= 8;
+    }
+    if(this.id == "binaryButt2")
+    {
+      document.querySelector("#guitars").muted = true;
+      samBinary -= 4;
+    }
+    if(this.id == "binaryButt3")
+    {
+      document.querySelector("#vox").muted = true;
+      samBinary -= 2;
+    }
+    if(this.id == "binaryButt4")
+    {
+      document.querySelector("#extra").muted = true;
+      samBinary -= 1;
+    }
+  }
+  else
+  {
+    this.src = "media/other/up.png";
+    this.tog = true;
+
+    if(this.id == "binaryButt1")
+    {
+      document.querySelector("#rhythm").muted = false;
+      samBinary += 8;
+    }
+    if(this.id == "binaryButt2")
+    {
+      document.querySelector("#guitars").muted = false;
+      samBinary += 4;
+    }
+    if(this.id == "binaryButt3")
+    {
+      document.querySelector("#vox").muted = false;
+      samBinary += 2;
+    }
+    if(this.id == "binaryButt4")
+    {
+      document.querySelector("#extra").muted = false;
+      samBinary += 1;
+    }
+  }
+
+  document.querySelector("#binaryLex").innerHTML = samBinaryLex[samBinary];
 }
 
 function soundToggle()

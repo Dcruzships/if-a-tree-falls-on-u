@@ -487,6 +487,17 @@ body {
   width: 70px;
 }
 
+#binaryLex{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.binary{
+  display: inline-block;
+  margin-left: 12.5%;
+  margin-top: 10%;
+}
+
 footer {
   position: fixed;
   font-size: 30px;
