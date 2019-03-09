@@ -492,6 +492,10 @@ body {
   margin-top: 10%;
 }
 
+#binaryLex:hover{
+  color: yellow;
+}
+
 .binary{
   display: inline-block;
   margin-left: 12.5%;

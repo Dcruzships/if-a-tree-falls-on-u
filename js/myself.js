@@ -31,6 +31,7 @@ let media = document.querySelector("#music");
 let mediaButton = document.querySelector("#play");
 mediaButton.isPlaying = false;
 let samBinary = 0;
+let egg = 0;
 
 //PHP Info, also delete personal info once the window is closed
 let phoneNumber = localStorage.getItem("bvd5889-number");
@@ -78,7 +79,7 @@ let allLexia =
 
   "kuhu":"<p id='kuhuPoem'>so won't you forgive me<br><br>won't you let us be<br><br>we could<br><br>fly kites catch butterflies<br><br>hop on playgrounds and watch the clouds oh<br><br>it just gets hard<br><br>and i freak out<br><br>because if i lose you<br><br>i know ill pout<br><br></p><button class='lexButt emailSend' id='kuhuButt'>lol maybe</button>",
 
-  "sam":"<p id='binaryLex'>whatever</p><br><br><img src='media/other/down.png' class='binary' id='binaryButt1'><img src='media/other/down.png' class='binary' id='binaryButt2'><img src='media/other/down.png' class='binary' id='binaryButt3'><img src='media/other/down.png' class='binary' id='binaryButt4'><audio src='media/audio/coffeeRhythm.wav' class='binaryAudio' id='rhythm' autoplay loop></audio><audio src='media/audio/coffeeGuitars.wav' class='binaryAudio' id='guitars' autoplay loop></audio><audio src='media/audio/coffeeVox.wav' class='binaryAudio' id='vox' autoplay loop></audio><audio src='media/audio/coffeeExtra.wav' class='binaryAudio' id='extra' autoplay loop></audio>",
+  "sam":"<p id='binaryLex'>!!!...!!!</p><br><br><img src='media/other/down.png' class='binary' id='binaryButt1'><img src='media/other/down.png' class='binary' id='binaryButt2'><img src='media/other/down.png' class='binary' id='binaryButt3'><img src='media/other/down.png' class='binary' id='binaryButt4'><audio src='media/audio/coffeeRhythm.wav' class='binaryAudio' id='rhythm' autoplay loop></audio><audio src='media/audio/coffeeGuitars.wav' class='binaryAudio' id='guitars' autoplay loop></audio><audio src='media/audio/coffeeVox.wav' class='binaryAudio' id='vox' autoplay loop></audio><audio src='media/audio/coffeeExtra.wav' class='binaryAudio' id='extra' autoplay loop></audio><audio src='media/audio/snap.wav' id='easter'></audio>",
 
   "porn":"<p id='porn1'>Pornography (often abbreviated porn) is the portrayal of sexual subject matter for the exclusive purpose of sexual arousal. Pornography may be presented in a variety of media, including books, magazines, postcards, photographs, sculpture, drawing, painting, animation, sound recording, phone calls, writing, film, video, and video games. The term applies to the depiction of the act rather than the act itself, and so does not include live exhibitions like sex shows and striptease. The primary subjects of present-day pornographic depictions are pornographic models, who pose for still photographs, and pornographic actors or porn stars, who perform in pornographic films. If dramatic skills are not involved, a performer in a porn film may also be called a model.</p><br><button class='lexButt pornButtons' id='showPorn1'>show more</button><br><p id='porn2'>Various groups within society have considered depictions of a sexual nature immoral, addictive, and noxious, labeling them pornographic, and attempting to have them suppressed under obscenity and other laws, with varying degrees of success. Such works have also often been subject to censorship and other legal restraints to publication, display, or possession, leading in many cases to their loss. Such grounds, and even the definition of pornography, have differed in various historical, cultural, and national contexts.</p><br><button class='lexButt pornButtons' id='showPorn2'>show more</button><br><p id='porn3'>Irrespective of the legal or social view of pornography, it has been used in a number of contexts. It is used, for example, at fertility clinics to stimulate sperm donors. Some couples use pornography at times for variety and to create a sexual interest or as part of foreplay. There is also some evidence that pornography can be used to treat voyeurism.</p><br><button class='lexButt pornButtons' id='showPorn3'>show more</button>",
 
@@ -99,22 +100,22 @@ let allLexia =
 
 let samBinaryLex =
 [
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-  "14",
-  "15"
+  "But why? he declared.",
+  "with a scream and a cry",
+  "as he called to the heavens",
+  "oh why and oh why",
+  "do i try, he declared",
+  "when this life isn't fair",
+  "and there's no one to trust",
+  "and there's no one to care",
+  "and he punched on the wheel!",
+  "and he screeched in his seat!",
+  "and he hammered his arms!",
+  "and he pounded his feet!",
+  "and he pummelled his head!",
+  "and he projected his heart!",
+  "and he wept with dismay!",
+  "and i knew it was love."
 ]
 
 let emailSenders =
@@ -388,6 +389,9 @@ function setButtons(id)
   {
     let binaryButts = document.querySelectorAll(".binary");
     let beats = document.querySelectorAll(".binaryAudio");
+    let clicky = document.querySelector("#binaryLex");
+    let easter = document.querySelector("#easter");
+    egg = 0;
 
     for(var i = 0; i < binaryButts.length; i++)
     {
@@ -395,6 +399,21 @@ function setButtons(id)
       binaryButts[i].val = "0";
       binaryButts[i].addEventListener("click", samSound);
       beats[i].muted = true;
+    }
+
+    // <3 u mike
+    clicky.onclick = (e) =>
+    {
+      if(samBinary == egg)
+      {
+        egg++;
+        easter.play();
+
+        if(egg == 16)
+        {
+          clicky.innerHTML = "@lanzafamous"
+        }
+      }
     }
 
     // beats[2].muted = false;
