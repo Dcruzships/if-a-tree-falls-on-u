@@ -54,7 +54,7 @@ h1
 
 #landing
 {
-  height: 80vh;
+  height: 90vh;
   width: 90vw;
   background-color: #000000;
   margin: auto;
@@ -160,4 +160,42 @@ footer
   margin-top: .2em;
   font-size: 1.4em;
   color: white;
+}
+
+.txtbutt
+{
+  color: red;
+}
+
+a:hover
+{
+  color: gold;
+}
+
+.txtbutt:visited
+{
+  color: red;
+}
+
+#infoButt
+{
+  color: white;
+}
+
+#infoButt:hover
+{
+  color: gold;
+}
+
+#info
+{
+  color: white;
+  margin: auto;
+  display: block;
+  text-align: left;
+  padding: 2em;
+  padding-top: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: 24px;
 }

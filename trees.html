@@ -11,12 +11,12 @@
 </head>
 
 <body>
-  <div id="navcontainer">
+  <!-- <div id="navcontainer">
     <ul id="navlist">
       <li id="active"><a href="#" id="current">trees</a></li>
       <li><a href="family">family</a></li>
     </ul>
-  </div>
+  </div> -->
 
   <div id="landing">
     <h1><u>if a tree falls on u</u></h1>
@@ -39,9 +39,36 @@
     </ol>
   </div>
 
-  <footer>Brandon Dcruz, Copyright 2018</footer>
+  <footer><a class='txtbutt' id='infoButt'>info</a></footer>
 
   <script src="js/trees.js"></script>
+  <script>
+
+    let info = document.querySelector("#infoButt");
+    let landing = document.querySelector("#landing");
+    let savehtml = landing.innerHTML;
+    let toggle = true;
+
+    info.onclick = (e) =>
+    {
+      if(toggle)
+      {
+        landing.innerHTML = "<h1><u>about</u></h1><p id='info'><u>if a tree falls on u</u> is a story about a family told through prose, poetry, emails, texts, links, videos, imagery, sound, and other forms of media.<br><br>your email and phone number will only be saved on your personal machine, only accessable by these pages. you will not be spammed, the only communication will be when you directly interact with the application.<br><br><3<br><br><a class='txtbutt' href='https://dcruzships.github.io/' target='_blank'>more info here</a></p>";
+
+        info.innerHTML = "back";
+      }
+      else
+      {
+        landing.innerHTML = savehtml;
+        info.innerHTML = "info";
+      }
+
+      toggle = !toggle;
+    }
+
+
+
+  </script>
 </body>
 
 </html>
