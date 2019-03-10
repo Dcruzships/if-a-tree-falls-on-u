@@ -12,6 +12,11 @@ submit.addEventListener("click", storeValues);
 number.addEventListener("click", resetCode);
 email.addEventListener("click", resetCode);
 
+let info = document.querySelector("#infoButt");
+let landing = document.querySelector("#landing");
+let savehtml = landing.innerHTML;
+let toggle = true;
+
 getValues();
 
 document.addEventListener("keydown", function (e)
@@ -110,4 +115,38 @@ function getNum(numString) {
   } else {
     return finalNum;
   }
+}
+
+info.onclick = (e) =>
+{
+  if(toggle)
+  {
+    landing.innerHTML = "<h1><u>about</u></h1><p id='info'><u>if a tree falls on u</u> is a story about a family told through prose, poetry, emails, texts, links, videos, imagery, sound, and other forms of media.<br><br>your email and phone number will only be saved on your personal machine, only accessable by these pages. you will not be spammed, the only communication will be when you directly interact with the application.<br><br><3<br><br><a class='txtbutt' href='https://dcruzships.github.io/' target='_blank'>more info here</a></p>";
+
+    info.innerHTML = "back";
+  }
+  else
+  {
+    landing.innerHTML = savehtml;
+    info.innerHTML = "info";
+
+    submit = document.querySelector("#button");
+    email = document.querySelector("#email");
+    number = document.querySelector("#number");
+    errorCode = document.querySelector("#error");
+    carrier = document.querySelector("#carrier");
+
+    errorCode.innerHTML = "";
+    submit.addEventListener("click", storeValues);
+    number.addEventListener("click", resetCode);
+    email.addEventListener("click", resetCode);
+
+    info = document.querySelector("#infoButt");
+    landing = document.querySelector("#landing");
+
+    savehtml = landing.innerHTML;
+    toggle = true;
+  }
+
+  toggle = !toggle;
 }
