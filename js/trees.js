@@ -121,7 +121,7 @@ info.onclick = (e) =>
 {
   if(toggle)
   {
-    landing.innerHTML = "<h1><u>about</u></h1><p id='info'><u>if a tree falls on u</u> is a story about a family told through prose, poetry, emails, texts, links, videos, imagery, sound, and other forms of media.<br><br>your email and phone number will only be saved on your personal machine, only accessable by these pages. you will not be spammed, the only communication will be when you directly interact with the application.<br><br><3<br><br><a class='txtbutt' href='https://dcruzships.github.io/' target='_blank'>more info here</a></p>";
+    landing.innerHTML = "<h1><u>about</u></h1><p id='info'><u>if a tree falls on u</u> is a story about a family told through prose, poetry, emails, texts, links, videos, imagery, sound, and other forms of media.<br><br>your email and phone number will only be saved on your personal machine, only accessable by these pages. you will not be spammed, the only communication will be when you directly interact with the application.<br><br><3<br><br><a class='txtbutt' href='https://github.com/Dcruzships/if-a-tree-falls-on-u' target='_blank'>more info here</a><br><br><a class='txtbutt' href='https://dcruzships.github.io/' target='_blank'>about me</a></p>";
 
     info.innerHTML = "back";
   }
