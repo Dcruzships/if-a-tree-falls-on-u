@@ -180,6 +180,7 @@ a:hover
 #infoButt
 {
   color: white;
+  cursor: pointer;
 }
 
 #infoButt:hover

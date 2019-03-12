@@ -143,9 +143,6 @@ info.onclick = (e) =>
 
     info = document.querySelector("#infoButt");
     landing = document.querySelector("#landing");
-
-    savehtml = landing.innerHTML;
-    toggle = true;
   }
 
   toggle = !toggle;

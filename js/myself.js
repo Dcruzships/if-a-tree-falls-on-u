@@ -3,7 +3,7 @@
 // (prior to 5/21) Why am I bothering with this. There's more code in here than I've written in years, why? This is a school assignment, I could've passed in some shitty, boring bot, gotten an A, and moved on. According to report cards and GPAs, those people will be better than me, more creative. Fuck that. There's so much potential with this piece. And all it amounts to is a 60. This deserves so much more, even at this primitive stage. There's more creativity in the first function than there is in most of everybody else's projects. What's the point, for me? For art? For sanity? I just want my parents to be proud of me, for me to make something special, for something happy to happen. This piece is bullshit, because none of that is possible. The kid next to me who made a shitty "poetry" bot will have an A and a pat on the back. I get a 60 and screams from my mom. This is why people drop out. This is why I should drop out. Create some shit cell phone app, make a fortnite YouTube channel, perform at random coffee shops for 50 an hour, DJ again. There's no point. I'm learning, but what the fuck does it amount to? A 2.6 gpa? Whatever man, whatever.
 
 let version = document.querySelector("#beta");
-version.innerHTML = "v.53";
+version.innerHTML = "";
 
 //Navigation
 let upBut = document.querySelector("#up");
